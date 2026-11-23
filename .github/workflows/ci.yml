@@ -27,7 +27,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci || npm install
+          npm install
 
       - name: Build frontend HUD and Obsidian plugin
         run: |
