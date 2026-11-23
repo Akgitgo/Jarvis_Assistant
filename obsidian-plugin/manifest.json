@@ -1,0 +1,10 @@
+{
+  "id": "jarvis-obsidian-plugin",
+  "name": "JARVIS",
+  "version": "0.1.0",
+  "minAppVersion": "1.4.0",
+  "description": "Gesture-controlled AI workspace integration for JARVIS",
+  "author": "JARVIS Project",
+  "authorUrl": "",
+  "isDesktopOnly": true
+}

@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  # Redis event bus and task queue for JARVIS
+  # Note: The JARVIS orchestrator must run directly on the host machine (not in Docker)
+  # because it controls host OS desktop automation (pyautogui, active windows, keyboard/mouse).
+  redis:
+    image: redis:7-alpine
+    container_name: jarvis_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+
+volumes:
+  redis_data:
+

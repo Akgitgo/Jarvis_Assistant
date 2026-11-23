@@ -1,0 +1,33 @@
+# paperclip-config/agents.yaml
+# JARVIS agent roster — loaded by the orchestrator to discover available agents.
+
+agents:
+  - id: orchestrator
+    name: JARVIS Orchestrator
+    description: Core FastAPI + Socket.IO server. Routes intents to agents and manages Redis state.
+    entrypoint: orchestrator/main.py
+    adapter: claude_local
+    capabilities:
+      - voice_parse
+      - task_routing
+      - redis_state
+
+  - id: analyst
+    name: JARVIS Analyst
+    description: Reads vault and task history; surfaces summaries and recommendations.
+    prompt: paperclip-config/prompts/analyst.md
+    adapter: claude_local
+    capabilities:
+      - vault_read
+      - state_query
+      - report_generate
+
+  - id: browser_client
+    name: JARVIS Browser Client
+    description: React/Vite HUD with gesture and voice capture.
+    entrypoint: browser-client/src/main.tsx
+    adapter: none
+    capabilities:
+      - gesture_capture
+      - voice_capture
+      - hud_display

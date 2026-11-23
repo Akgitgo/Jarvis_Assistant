@@ -1,0 +1,12 @@
+{
+  "name": "jarvis-cli",
+  "version": "1.0.0",
+  "description": "Zero-dependency CLI for setting up and running JARVIS AI workspace",
+  "type": "module",
+  "bin": {
+    "jarvis": "./bin/jarvis.mjs"
+  },
+  "scripts": {
+    "start": "node ./bin/jarvis.mjs"
+  }
+}
